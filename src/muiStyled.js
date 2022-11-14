@@ -55,6 +55,9 @@ export const AboutHeader = styled(Box)(({theme}) => ({
 }))
 
 export const LoadingWrapper = styled(Box)(({theme}) => ({
+    position: 'fixed',
+    top: '0',
+    zIndex: '999',
     width: '100%',
     height: '100vh',
     backgroundColor: theme.palette.primary.main,

@@ -4,7 +4,7 @@ import AboutBody from '../components/About/AboutBody'
 import AboutHeads from '../components/About/AboutHeads'
 import Faq from '../components/About/Faq'
 import BigTitle from '../components/BigTitle'
-import RecentBlogs from '../components/Home/RecentBlogs'
+import RecentBlogs from '../components/RecentBlogs'
 import Subscribe from '../components/Home/Subscribe'
 import useRecentBlogs from '../helpers/useRecentBlogs'
 

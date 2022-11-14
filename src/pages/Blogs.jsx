@@ -3,16 +3,21 @@ import React, { useState } from 'react'
 import BigTitle from '../components/BigTitle'
 import BlogFilter from '../components/Blogs/BlogFilter'
 import BlogWindow from '../components/Blogs/BlogWindow'
-import RecentBlogs from '../components/Home/RecentBlogs'
+import RecentBlogs from '../components/RecentBlogs'
 import Subscribe from '../components/Home/Subscribe'
 import useAllBlogs from '../helpers/useAllBlogs'
-import useRecentBlogs from '../helpers/useRecentBlogs'
+import Loading from '../components/Loading'
 
 const Blogs = () => {
 
-    const { allBlogs } = useAllBlogs()
-    const { recentBlogs } = useRecentBlogs()
+    const { loading, allBlogs } = useAllBlogs()
     const [input, setInput] = useState("");
+
+  if(loading){
+    return(
+      <Loading />
+    )
+  }
 
     const handleFilterChange = (event) => {
         setInput(event.target.value);
@@ -57,7 +62,7 @@ const Blogs = () => {
           </Box>
           <Box sx={{padding: '25px 0', width: '100%'}}>
               <BigTitle header="Recent Posts" />
-              <RecentBlogs recentBlogs={recentBlogs} />
+              <RecentBlogs />
           </Box>
         </Container>
     </Box>

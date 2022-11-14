@@ -3,14 +3,22 @@ import React from 'react'
 import useAllBlogs from '../helpers/useAllBlogs'
 import { useLocation } from 'react-router-dom'
 import { Favorite, Share } from '@mui/icons-material'
+import Loading from '../components/Loading'
 
 const BlogPage = () => {
 
-    const { allBlogs } = useAllBlogs()
+    const { loading, allBlogs } = useAllBlogs()
+
     const params = useLocation().pathname.split('/')[2]
 
     const clickedBlog = allBlogs?.filter(blog => blog.slug === params)[0]
     console.log(clickedBlog);
+ 
+  if(loading){
+    return(
+      <Loading />
+    )
+  }
 
   return (
     <Box sx={{ minHeight: '80vh' }}>

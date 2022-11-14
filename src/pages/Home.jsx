@@ -4,15 +4,22 @@ import BigTitle from '../components/BigTitle'
 import BlogCard from '../components/Home/BlogCard'
 import Hero from '../components/Home/Hero'
 import Introduce from '../components/Home/Introduce'
-import RecentBlogs from '../components/Home/RecentBlogs'
+import RecentBlogs from '../components/RecentBlogs'
 import Subscribe from '../components/Home/Subscribe'
 import useRecentBlogs from '../helpers/useRecentBlogs'
 import useTrendings from '../helpers/useTrendings'
+import Loading from '../components/Loading'
 
 const Home = () => {
 
-  const { trendings } = useTrendings()
+  const { loading, trendings } = useTrendings()
   const { recentBlogs } = useRecentBlogs()
+
+  if(loading){
+    return(
+      <Loading />
+    )
+  }
 
   return (
     <Box>

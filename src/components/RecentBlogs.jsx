@@ -1,7 +1,11 @@
 import { Card, CardActionArea, CardContent, CardMedia, Grid, Typography } from '@mui/material'
 import React from 'react'
+import useRecentBlogs from '../helpers/useRecentBlogs'
 
-const RecentBlogs = ({ recentBlogs }) => {
+const RecentBlogs = () => {
+
+    const { recentBlogs } = useRecentBlogs()
+
   return (
     <Grid container
         width="100%"

@@ -1,7 +1,5 @@
-import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
-import Loading from "./components/Loading";
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import BlogPage from "./pages/BlogPage";
@@ -10,18 +8,6 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 
 function App() {
-
-  const [loading, setLoading] = useState(true)
-
-  setTimeout(() => {
-    setLoading(false)
-  }, 2500)
-
-  if(loading){
-    return(
-      <Loading/>
-    )
-  }
 
   return (
     <>
