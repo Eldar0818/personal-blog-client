@@ -72,3 +72,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### Controlling App Url
 
 https://sirdash-blog.cyclic.app
+
+### Website Url
+
+https://sirdash.vercel.app/
